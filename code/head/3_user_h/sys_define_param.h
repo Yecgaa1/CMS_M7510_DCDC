@@ -67,7 +67,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 /*-------------------锂电池类型选择-----------------------------------------*/
 #define COM_LFP_BAT                                     (0)//锂电池类型为磷酸铁锂
 #define COM_NCM_BAT                                     (1)//锂电池类型为三元锂电
-#define COM_BAT_TYPE_SELECT                             (COM_LFP_BAT)//锂电池类型选择
+#define COM_BAT_TYPE_SELECT                             (COM_NCM_BAT)//锂电池类型选择
 
 /*-------------------锂电池串数/主变匝比选择--------------------------------*/
 #if 0
@@ -79,10 +79,8 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 #endif
 
 #if (COM_BAT_TYPE_SELECT == COM_LFP_BAT)//磷酸铁锂电池
-//    #define COM_VBAT_MAX_VAL                            (COM_BAT_NUM_SET * COM_LFP_VBAT_S_MAX )//最高电池电压设定(V)  
-//    #define COM_VBAT_MIN_VAL                            (COM_BAT_NUM_SET * COM_LFP_VBAT_S_MIN )//最低电池电压设定(V) 
-		#define COM_VBAT_MAX_VAL                               (53.5)//最高电池电压设定(V)  
-    #define COM_VBAT_MIN_VAL                            (45)//最低电池电压设定(V) 
+    #define COM_VBAT_MAX_VAL                            (COM_BAT_NUM_SET * COM_LFP_VBAT_S_MAX )//最高电池电压设定(V)  
+    #define COM_VBAT_MIN_VAL                            (COM_BAT_NUM_SET * COM_LFP_VBAT_S_MIN )//最低电池电压设定(V) 
     #define COM_VBAT_VALBACK                            ( 0.3)//保护使用的回差值    
 #else   //三元锂电池
     #define COM_VBAT_MAX_VAL                            (COM_BAT_NUM_SET * COM_NCM_VBAT_S_MAX )//最高电池电压设定(V)  
@@ -92,7 +90,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 
 
 /*-------------------充电电流和电压参数设定---------------------------------*/
-#define COM_CHG_IBAT_MAX_VAL                            (2.5)//恒流充电最大充电电流设定(A)
+#define COM_CHG_IBAT_MAX_VAL                            (19.0)//恒流充电最大充电电流设定(A)
 #define COM_CHG_VBAT_MAX_VAL                            (COM_VBAT_MAX_VAL - 0.3 )//恒压充电最高电池电压设定(V) 
 #define COM_CHG_VBAT_MIN_VAL                            (COM_VBAT_MIN_VAL - 0.0 )//恒压充电最低电池电压设定(V)  
 
