@@ -90,7 +90,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 
 
 /*-------------------充电电流和电压参数设定---------------------------------*/
-#define COM_CHG_IBAT_MAX_VAL                            (19.0)//恒流充电最大充电电流设定(A)
+#define COM_CHG_IBAT_MAX_VAL                            (3.0)//恒流充电最大充电电流设定(A)
 #define COM_CHG_VBAT_MAX_VAL                            (COM_VBAT_MAX_VAL - 0.3 )//恒压充电最高电池电压设定(V) 
 #define COM_CHG_VBAT_MIN_VAL                            (COM_VBAT_MIN_VAL - 0.0 )//恒压充电最低电池电压设定(V)  
 
