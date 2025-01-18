@@ -4,7 +4,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 @Author     : 
 @Version    : 0.0.1  
 @History    : 
-@Attention  £º
+@Attention  ï¿½ï¿½
 *****************************************************************************/
 
 /****************************************************************************/
@@ -18,7 +18,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 Description: User_DelayTime_ms
 Input      : 
 Return     : 
-Others     : msÑÓÊ±º¯Êý
+Others     : msï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 void User_DelayTime_ms(uint32_t delay)
 {
@@ -38,7 +38,7 @@ void User_DelayTime_ms(uint32_t delay)
 Description: User_DelayTime_us
 Input      : 
 Return     : 
-Others     : usÑÓÊ±º¯Êý
+Others     : usï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 void User_DelayTime_us(uint32_t delay)
 {
@@ -58,14 +58,14 @@ void User_DelayTime_us(uint32_t delay)
 Description: DC_CloseDrive
 Input      : 
 Return     : 
-Others     : ±£»¤Ê±¹Ø±ÕÇý¶¯
+Others     : ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 void DC_CloseDrive(void)
 {	  
     if ( E_FALSE != System_ProtectFlag_Info.all )
     {
         #if OPERATING_MODE == NORMAL_MODE
-            COM_PWM_Disable();	//¹Ø±ÕPWMÊä³ö 
+            COM_PWM_Disable();	//ï¿½Ø±ï¿½PWMï¿½ï¿½ï¿½ 
             State_Context.flag.bit.fault_Occur = E_TRUE;
         #endif
     }
@@ -80,7 +80,7 @@ void DC_CloseDrive(void)
 Description: User_FAN_Deal
 Input      : 
 Return     : 
-Others     : É¢ÈÈ·çÉÈ¿ØÖÆ
+Others     : É¢ï¿½È·ï¿½ï¿½È¿ï¿½ï¿½ï¿½
 *************************************************/
 int16_t i16FAN_Close_Cnt,i16FAN_Open_Cnt = 0;
 void User_FAN_Deal(void)
@@ -88,10 +88,10 @@ void User_FAN_Deal(void)
     if(SysClockBase_ms.sys_Mode_1ms == 1)    
     {       
         /*------------------------------------------------------------------------------------*/
-        /*---------------------É¢ÈÈ·çÉÈ¿ØÖÆ---------------------------------------------------*/
+        /*---------------------É¢ï¿½È·ï¿½ï¿½È¿ï¿½ï¿½ï¿½---------------------------------------------------*/
         if( COM_AD_Data_Info.temp_NTC_Val_Fir < COM_OPEN_FAN_TEMP_VALUE ||\
             COM_AD_Data_Info.iBat_CHG_Val_Fir >= COM_OPEN_FAN_CHG_IBAT_VALUE ||\
-            COM_AD_Data_Info.iBat_DISC_Val_Fir >= COM_OPEN_FAN_DISC_IBAT_VALUE )  //Äæ±ä²à»òÉýÑ¹²àÈÎÒ»¸ö¸ßÓÚ45¡æ£¬¿ªÆô·çÉÈ
+            COM_AD_Data_Info.iBat_DISC_Val_Fir >= COM_OPEN_FAN_DISC_IBAT_VALUE )  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½45ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             i16FAN_Close_Cnt = 0;
             if(i16FAN_Open_Cnt <= 200)  i16FAN_Open_Cnt ++;
@@ -99,7 +99,7 @@ void User_FAN_Deal(void)
         }
          if( COM_AD_Data_Info.temp_NTC_Val_Fir > COM_CLOSE_FAN_TEMP_VALUE &&\
              COM_AD_Data_Info.iBat_CHG_Val_Fir <= COM_CLOSE_FAN_CHG_IBAT_VALUE&&\
-             COM_AD_Data_Info.iBat_DISC_Val_Fir <= COM_CLOSE_FAN_DISC_IBAT_VALUE)//Äæ±ä²àºÍÉýÑ¹²à¶¼µÍÓÚ35¡æ£¬¹Ø±Õ·çÉÈ
+             COM_AD_Data_Info.iBat_DISC_Val_Fir <= COM_CLOSE_FAN_DISC_IBAT_VALUE)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½à¶¼ï¿½ï¿½ï¿½ï¿½35ï¿½æ£¬ï¿½Ø±Õ·ï¿½ï¿½ï¿½
         {
             i16FAN_Open_Cnt = 0;
             if(i16FAN_Close_Cnt <= 50)  i16FAN_Close_Cnt ++;
@@ -113,7 +113,7 @@ void User_FAN_Deal(void)
 Description: User_LED_Deal
 Input      : 
 Return     : 
-Others     : LEDÖ¸Ê¾µÆÂß¼­
+Others     : LEDÖ¸Ê¾ï¿½ï¿½ï¿½ß¼ï¿½
 *************************************************/
 void User_LED_ms(LED_Ctr_Var_t *LED_Info)
 {
@@ -152,13 +152,13 @@ void User_LED_ms(LED_Ctr_Var_t *LED_Info)
 Description: User_LED_Deal
 Input      : 
 Return     : 
-Others     : LEDÖ¸Ê¾µÆÂß¼­
+Others     : LEDÖ¸Ê¾ï¿½ï¿½ï¿½ß¼ï¿½
 *************************************************/
 void User_LED_Deal(void)
 {
     LED_Ctr_Info.flag_1ms = SysClockBase_ms.sys_LED_1ms;
     
-/*---------------------------³õÊ¼×¼±¸×´Ì¬ÂÌµÆÉÁË¸0.5HZ-------------------------------------------*/
+/*---------------------------ï¿½ï¿½Ê¼×¼ï¿½ï¿½×´Ì¬ï¿½Ìµï¿½ï¿½ï¿½Ë¸0.5HZ-------------------------------------------*/
 	if ( System_ProtectFlag_Info.all == 0 &&
 	     State_Context.state_Value <= COM_READY_STATE )
     {		
@@ -168,7 +168,7 @@ void User_LED_Deal(void)
         User_LED_ms(&LED_Ctr_Info);        
 
     }
-/*----------------------------ÔËÐÐ×´Ì¬ÂÌµÆ³£ÁÁ---------------------------------------------*/
+/*----------------------------ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ÌµÆ³ï¿½ï¿½ï¿½---------------------------------------------*/
     else if ( COM_RUN_STATE == State_Context.state_Value )
     {
         LED_Ctr_Info.on_Val =1000;
@@ -176,68 +176,68 @@ void User_LED_Deal(void)
         User_LED_ms(&LED_Ctr_Info);          
     }
                
-/*-------------------------------¹ÊÕÏ×´Ì¬ÂÌµÆÃð 1HZ-------------------------------------*/
+/*-------------------------------ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Ìµï¿½ï¿½ï¿½ 1HZ-------------------------------------*/
     else 
     {
         LED_Ctr_Info.on_Val =200;
         LED_Ctr_Info.period_Val = 400;
         switch( System_ProtectFlag_Info.all )
         {               
-            case 1:  //¹ýÔØ  LEDÉÁË¸2´Î  
+            case 1:  //ï¿½ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸2ï¿½ï¿½  
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 2;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
-            case 2:  //Ä¸Ïß¹ýÇ·Ñ¹  LEDÉÁË¸3´Î                  
+            case 2:  //Ä¸ï¿½ß¹ï¿½Ç·Ñ¹  LEDï¿½ï¿½Ë¸3ï¿½ï¿½                  
             case 4:  
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 3;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
-            case 64:  //¸¨ÖúµçÔ´¹ýÇ·Ñ¹  LEDÉÁË¸4´Î                  
+            case 64:  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ç·Ñ¹  LEDï¿½ï¿½Ë¸4ï¿½ï¿½                  
             case 128:  
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 4;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
-            case 256:  //¹ýÎÂ  LEDÉÁË¸5´Î
+            case 256:  //ï¿½ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸5ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 5;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
             case 512:  //
-            case 1024:  //¹ýÁ÷  LEDÉÁË¸6´Î                
+            case 1024:  //ï¿½ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸6ï¿½ï¿½                
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 6;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
-            case 2048:  //µç³ØµçÑ¹¹ýÇ·Ñ¹  LEDÉÁË¸7´Î
-            case 4096:  //µç³ØµçÑ¹¹ýÇ·Ñ¹  LEDÉÁË¸7´Î                
+            case 2048:  //ï¿½ï¿½Øµï¿½Ñ¹ï¿½ï¿½Ç·Ñ¹  LEDï¿½ï¿½Ë¸7ï¿½ï¿½
+            case 4096:  //ï¿½ï¿½Øµï¿½Ñ¹ï¿½ï¿½Ç·Ñ¹  LEDï¿½ï¿½Ë¸7ï¿½ï¿½                
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 7;
                 User_LED_ms(&LED_Ctr_Info);
                 break;
-            case 8192:  //³õÊ¼»¯Ê§°Ü  LEDÉÁË¸8´Î
+            case 8192:  //ï¿½ï¿½Ê¼ï¿½ï¿½Ê§ï¿½ï¿½  LEDï¿½ï¿½Ë¸8ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 8;
                 User_LED_ms(&LED_Ctr_Info);
                 break;                
-            case 16384:  //Äæ±ä²à¹ÊÕÏ  LEDÉÁË¸9´Î
+            case 16384:  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸9ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 9;
                 User_LED_ms(&LED_Ctr_Info);
                 break;   
-            case 32768:  //Í¨ÐÅ¹ÊÕÏ  LEDÉÁË¸10´Î
+            case 32768:  //Í¨ï¿½Å¹ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸10ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 10;
                 User_LED_ms(&LED_Ctr_Info);
                 break; 
-            case 32:  //VREF¹ÊÕÏ  LEDÉÁË¸11´Î
+            case 32:  //VREFï¿½ï¿½ï¿½ï¿½  LEDï¿½ï¿½Ë¸11ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 11;
                 User_LED_ms(&LED_Ctr_Info);
                 break;                
-            default: //  ÂÌµÆÉÁ10´Î
+            default: //  ï¿½Ìµï¿½ï¿½ï¿½10ï¿½ï¿½
                 if(LED_Ctr_Info.cycle_Cnt == 0)
                     LED_Ctr_Info.cycle_Val = 12;
                 User_LED_ms(&LED_Ctr_Info);
@@ -253,41 +253,41 @@ void User_LED_Deal(void)
 Description: Key_Calc
 Input      : 
 Return     : 
-Others     : °´¼ü¹¦ÄÜ³ÌÐòÂß¼­´¦Àí
+Others     : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 void Key_Calc( Key_Var_t *key )
 {
     /*------------------------------------------------------------------------------------*/
-    if( key->in == key->ref_Active_Level )	//ÊäÈëµçÆ½ÓëÉè¶¨ÓÐÐ§µçÆ½Ò»ÖÂ
+    if( key->in == key->ref_Active_Level )	//ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ð§ï¿½ï¿½Æ½Ò»ï¿½ï¿½
     {
         if ( key->release_Cnt > 0 )                   
         {
             key->release_Cnt--;			  
         }
-        if ( key->close_Cnt < key->c_Delay_Val )  //°´¼ü±ÕºÏ¼ÆÊý±È½Ï
+        if ( key->close_Cnt < key->c_Delay_Val )  //ï¿½ï¿½ï¿½ï¿½ï¿½ÕºÏ¼ï¿½ï¿½ï¿½ï¿½È½ï¿½
         {
             key->close_Cnt++;
         }
         else
         {
               key->close_Cnt = 0;
-              key->out_State = E_KEY_CLOSE;  //±íÊ¾°´¼ü°´ÏÂ
+              key->out_State = E_KEY_CLOSE;  //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
     }
-    else  //ÊäÈëµçÆ½ÓëÉè¶¨ÓÐÐ§µçÆ½²»Ò»ÖÂ
+    else  //ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ð§ï¿½ï¿½Æ½ï¿½ï¿½Ò»ï¿½ï¿½
     {
         if ( key->close_Cnt > 0 )                    
         {
             key->close_Cnt--;			
         }
-        if ( key->release_Cnt < key->r_Delay_Val )  //°´¼üËÉ¿ª¼ÆÊý±È½Ï
+        if ( key->release_Cnt < key->r_Delay_Val )  //ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½
         {
             key->release_Cnt++;
         }
         else
         {
               key->release_Cnt = 0;
-              key->out_State = E_KEY_RELEASE;   //±íÊ¾°´¼üËÉ¿ª 
+              key->out_State = E_KEY_RELEASE;   //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ 
         }
     }
 }
@@ -297,7 +297,7 @@ void Key_Calc( Key_Var_t *key )
 Description: User_Key_Deal
 Input      : 
 Return     : 
-Others     : °´¼ü×´Ì¬´¦Àí
+Others     : ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 uint8_t u8_Key_SW_ShutDown_Flag = 0;
 uint16_t u16_ShutDown_Start_count,u16_ShutDown_Start_count1 = 0; 
@@ -305,16 +305,16 @@ void User_Key_Deal(void)
 {
   	if (SysClockBase_ms.sys_1ms == 1 )
     {  				
-        //Î´¿ª×Ü¿ª¹ØÊ±£¬²åÉÏÊÐµç×Ô¶¯Ëø×¡µçÔ´Ëø£¬½øÐÐ³äµçÔËÐÐ
+        //Î´ï¿½ï¿½ï¿½Ü¿ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Ô¶ï¿½ï¿½ï¿½×¡ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if( COM_AD_Data_Info.auxPower_Val_Fir <= COM_START_CHECK_AUX_POWER_UP &&\
             COM_AD_Data_Info.auxPower_Val_Fir >= COM_START_CHECK_AUX_POWER_DOWN &&\
             COM_AD_Data_Info.vBat_Val_Fir <= COM_START_CHECK_VBAT_UP &&\
             COM_AD_Data_Info.vBat_Val_Fir >= COM_START_CHECK_VBAT_DOWN &&\
             POWER_LOCK_STATUS == 0 && u8_Key_SW_ShutDown_Flag == 0)
         { 
-            if((++u16_ShutDown_Start_count1) >= COM_POWER_LOCK_TIME) //¿ª»úÑÓÊ±Ê±¼ä
+            if((++u16_ShutDown_Start_count1) >= COM_POWER_LOCK_TIME) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ê±ï¿½ï¿½
             {
-                POWER_LOCK_ENABLE;// P21ÊäÈëµçÔ´±£³ÖÐÅºÅ :ÉèÖÃÎª¸ßµçÆ½±íÊ¾´¦ÓÚ¿ª»ú×´Ì¬
+                POWER_LOCK_ENABLE;// P21ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ :ï¿½ï¿½ï¿½ï¿½Îªï¿½ßµï¿½Æ½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½×´Ì¬
                 u16_ShutDown_Start_count1 = 0;                                         
             }            
         }
@@ -325,36 +325,36 @@ void User_Key_Deal(void)
 
 
         
-        //¿ª¹Ø»ú°´Å¥	
+        //ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½Å¥	
         Key_SW_ShutDown.in = SHUT_DOWN_SWITCH;
         Key_SW_ShutDown.Calc( &Key_SW_ShutDown );
 					
-        //µçÔ´±£³ÖÐÅºÅÂß¼­´¦Àí					
-        if ( Key_SW_ShutDown.out_State == E_KEY_CLOSE &&  POWER_LOCK_STATUS == 0 && u8_Key_SW_ShutDown_Flag == 0 )   //&&  State_Context.State_Identifier > 2 )  	//×¼±¸×´Ì¬Íê³Éºó¿ªÊ¼ÉúÐ§	
+        //ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½					
+        if ( Key_SW_ShutDown.out_State == E_KEY_CLOSE &&  POWER_LOCK_STATUS == 0 && u8_Key_SW_ShutDown_Flag == 0 )   //&&  State_Context.State_Identifier > 2 )  	//×¼ï¿½ï¿½×´Ì¬ï¿½ï¿½Éºï¿½Ê¼ï¿½ï¿½Ð§	
         {
-            if((++u16_ShutDown_Start_count) >= COM_POWER_LOCK_TIME) //¿ª»úÑÓÊ±Ê±¼ä
+            if((++u16_ShutDown_Start_count) >= COM_POWER_LOCK_TIME) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ê±ï¿½ï¿½
             {
-                POWER_LOCK_ENABLE;// // P21ÊäÈëµçÔ´±£³ÖÐÅºÅ :ÉèÖÃÎª¸ßµçÆ½±íÊ¾´¦ÓÚ¿ª»ú×´Ì¬
+                POWER_LOCK_ENABLE;// // P21ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ :ï¿½ï¿½ï¿½ï¿½Îªï¿½ßµï¿½Æ½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½×´Ì¬
                 u16_ShutDown_Start_count = 0;                            
-                u8_Key_SW_ShutDown_Flag = 1; //¡°0¡±±íÊ¾°´¼üËÉ¿ª£¬¡°1¡±±íÊ¾°´¼üÎ´ËÉ¿ª 
+                u8_Key_SW_ShutDown_Flag = 1; //ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Î´ï¿½É¿ï¿½ 
                 COM_Ctr_Info.Power_OnOff_Flag =1;                
             }
         }
         else  if( Key_SW_ShutDown.out_State == E_KEY_CLOSE &&  POWER_LOCK_STATUS == 1 && u8_Key_SW_ShutDown_Flag == 0)  	                                  		
         {
-            //¹Ø±ÕÇý¶¯
+            //ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½
 
             COM_PWM_Disable(); 
             System_ProtectFlag_Info.all |= E_SYS_INIT_FAIL;
-            POWER_LOCK_DISABLE; // P21ÊäÈëµçÔ´±£³ÖÐÅºÅ :ÉèÖÃÎªµÍµçÆ½±íÊ¾´¦ÓÚ¹Ø»ú×´Ì¬
-            u8_Key_SW_ShutDown_Flag = 1; //¡°0¡±±íÊ¾°´¼üËÉ¿ª£¬¡°1¡±±íÊ¾°´¼üÎ´ËÉ¿ª
+            POWER_LOCK_DISABLE; // P21ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ :ï¿½ï¿½ï¿½ï¿½Îªï¿½Íµï¿½Æ½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú¹Ø»ï¿½×´Ì¬
+            u8_Key_SW_ShutDown_Flag = 1; //ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Î´ï¿½É¿ï¿½
             COM_Ctr_Info.Power_OnOff_Flag = 0;
         }
 
-        //¿ª¹Ø»ú°´Å¥ËÉ¿ª±êÖ¾Î»
+        //ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½Å¥ï¿½É¿ï¿½ï¿½ï¿½Ö¾Î»
         if ( Key_SW_ShutDown.out_State == E_KEY_RELEASE) 	
         {
-            u8_Key_SW_ShutDown_Flag = 0;   //¡°0¡±±íÊ¾°´¼üËÉ¿ª£¬¡°1¡±±íÊ¾°´¼üÎ´ËÉ¿ª			
+            u8_Key_SW_ShutDown_Flag = 0;   //ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Î´ï¿½É¿ï¿½			
         }
         
     }
@@ -366,14 +366,14 @@ void User_Key_Deal(void)
 Description: COM_CHG_INV_Select
 Input      : 
 Return     : 
-Others     : ³äµç»òÕß·Åµç¹¦ÄÜÑ¡Ôñ
+Others     : ï¿½ï¿½ï¿½ï¿½ï¿½ß·Åµç¹¦ï¿½ï¿½Ñ¡ï¿½ï¿½
 *************************************************/
 void COM_CHG_INV_Select(void)
 { 
     if(SysClockBase_ms.sys_Mode_1ms == 1)    
     {                        
         //COM_Ctr_Info.INV_PFC_Mode_Select = 2;
-        //ÊÐµç½ÓÈëÅÐ¶Ï£¬Éè¶¨¹¤×÷Ä£Ê½ÎªPFC×´Ì¬
+        //ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½Ä£Ê½ÎªPFC×´Ì¬
         if( System_ProtectFlag_Info.all == 0 && \
             State_Context.state_Value <= COM_RUN_STATE && \
             (DC_Ctrl_Info.mode == 1 || DC_Ctrl_Info.mode == 0)    &&\
@@ -386,9 +386,9 @@ void COM_CHG_INV_Select(void)
 
             if(COM_Ctr_Info.PFC_Mode_OK_Cnt >= COM_Ctr_Info.PFC_Mode_OK_TimeVal)
             { 
-                //ÖØÐÂ½øÈë³õÊ¼»¯½×¶Î    
+                //ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½×¶ï¿½    
               
-                COM_PWM_Disable();	//¹Ø±ÕPWMÊä³ö¡¢¼ÌµçÆ÷            
+                COM_PWM_Disable();	//ï¿½Ø±ï¿½PWMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½            
 
                 Initial_Deal.flag.bit.Initial_Ok        = E_FALSE;
                 Waiting_Deal.flag.bit.Waiting_Ok        = E_FALSE;
@@ -402,7 +402,7 @@ void COM_CHG_INV_Select(void)
 
                 DC_Ctrl_Info.INV_Ready_State = COM_INV_READY_STATE_NOK;    
                 COM_Ctr_Info.PFC_Mode_OK_Cnt = 0;
-                DC_Ctrl_Info.mode = 2;//¼ì²âÊÐµçÕý³£¹¤×÷Ä£Ê½ÎªPFCÄ£Ê½
+                DC_Ctrl_Info.mode = 2;//ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ÎªPFCÄ£Ê½
             }
         }
         else
@@ -421,8 +421,8 @@ void COM_CHG_INV_Select(void)
             {    
                 COM_Ctr_Info.INV_Mode_OK_Cnt = 0;
                
-                //ÖØÐÂ½øÈë³õÊ¼»¯½×¶Î                     
-                COM_PWM_Disable();	//¹Ø±ÕPWMÊä³ö¡¢¼ÌµçÆ÷            
+                //ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½×¶ï¿½                     
+                COM_PWM_Disable();	//ï¿½Ø±ï¿½PWMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½            
                 
                 Initial_Deal.flag.bit.Initial_Ok        = E_FALSE;
                 Waiting_Deal.flag.bit.Waiting_Ok        = E_FALSE;
@@ -433,10 +433,10 @@ void COM_CHG_INV_Select(void)
                 State_Context.flag.bit.waiting_Ok       = E_FALSE;                    
                 State_Context.flag.bit.ready_Ok         = E_FALSE;
                 State_Context.state_Value               = COM_WAITING_STATE;
-                CHG_Info.vBUS_Set              = 0;   //²»¿ÉÉ¾³ý             
+                CHG_Info.vBUS_Set              = 0;   //ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½             
                 DC_Ctrl_Info.INV_Ready_State = COM_INV_READY_STATE_NOK;
                 COM_Ctr_Info.INV_Mode_OK_Cnt = 0;                    
-                DC_Ctrl_Info.mode = 1;//Ä¬ÈÏÄæ±äÄ£Ê½  
+                DC_Ctrl_Info.mode = 1;//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½  
                 DC_Ctrl_Info.start_Finish_State = COM_START_FINISH_STATE_NOK;
 
             }
@@ -448,7 +448,7 @@ void COM_CHG_INV_Select(void)
 
 
         //COM_Ctr_Info.INV_PFC_Mode_Select = 0;
-        //Éè¶¨¹¤×÷Ä£Ê½Îª¿ÕÏÐ×´Ì¬
+        //ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½Ä£Ê½Îªï¿½ï¿½ï¿½ï¿½×´Ì¬
         if( System_ProtectFlag_Info.all == 0 && \
             State_Context.state_Value <= COM_RUN_STATE && \
             (DC_Ctrl_Info.mode == 1 || DC_Ctrl_Info.mode == 2)    &&\
@@ -460,8 +460,8 @@ void COM_CHG_INV_Select(void)
 
             if(COM_Ctr_Info.NO_Mode_OK_Cnt >= COM_Ctr_Info.NO_Mode_OK_TimeVal)
             { 
-                //ÖØÐÂ½øÈë³õÊ¼»¯½×¶Î                     
-                COM_PWM_Disable();	//¹Ø±ÕPWMÊä³ö¡¢¼ÌµçÆ÷            
+                //ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½×¶ï¿½                     
+                COM_PWM_Disable();	//ï¿½Ø±ï¿½PWMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½            
 
                 Initial_Deal.flag.bit.Initial_Ok        = E_FALSE;
                 Waiting_Deal.flag.bit.Waiting_Ok        = E_FALSE;
@@ -473,10 +473,10 @@ void COM_CHG_INV_Select(void)
                 State_Context.flag.bit.ready_Ok         = E_FALSE;                
                 State_Context.state_Value               = COM_WAITING_STATE;
                 
-                CHG_Info.vBUS_Set              = 0;   //²»¿ÉÉ¾³ý             
+                CHG_Info.vBUS_Set              = 0;   //ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½             
                
                 COM_Ctr_Info.NO_Mode_OK_Cnt = 0;
-                DC_Ctrl_Info.mode = 0;//¹¤×÷Ä£Ê½¿ÕÏÐÄ£Ê½
+                DC_Ctrl_Info.mode = 0;//ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
             }
         }
         else
@@ -492,20 +492,20 @@ void COM_CHG_INV_Select(void)
 Description: COM_UART0_Deal
 Input      : 
 Return     : 
-Others     : ´®¿Ú0Êý¾Ý´¦Àí
+Others     : ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 *************************************************/
 int init_crc = 0;
 uint8_t *UART0_RXD_B_Temp;
 int32_t CHG_vBat_AD_Hold,CHG_vBat_AD_Fir = 0;
 void COM_UART0_Deal(void)
 {
-    //µç³ØµçÑ¹ADÖµÂË²¨´¦Àí£¬³äµçÊ±Ê¹ÓÃ
+    //ï¿½ï¿½Øµï¿½Ñ¹ADÖµï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ê¹ï¿½ï¿½
     CHG_vBat_AD_Hold = DFILTER_N(6,CHG_Info.vBat_AD,CHG_vBat_AD_Hold);
     CHG_vBat_AD_Fir = CHG_vBat_AD_Hold >> 16;   
 
     
-    /*------------------------Í¨ÐÅÊý¾Ý½ÓÊÕ-----------------------------------------------------*/	
-    /*---------------------8Î»Êý¾Ý×ª»»Îª16Î»¸ñÊ½------------------------------------------*/
+    /*------------------------Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½-----------------------------------------------------*/	
+    /*---------------------8Î»ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îª16Î»ï¿½ï¿½Ê½------------------------------------------*/
     if( DMAVEC->CTRL[1].DMACT ==0)
     {        
         for(int i=0;i<=UART0_SEND_NUM;i++)
@@ -517,19 +517,19 @@ void COM_UART0_Deal(void)
             }
         }
           
-        //CRCÐ£ÑéÂë»ñµÃ´¦Àí
+        //CRCÐ£ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½
         for(int i=0;i<(UART0_SEND_NUM-2);i++)
         {
             UART0_Info.RXD_CRC_Calc = crc16_modbus(&UART0_RXD_B_Temp[i],1,UART0_Info.RXD_CRC_Init ); 
             UART0_Info.RXD_CRC_Init = UART0_Info.RXD_CRC_Calc;          	 
         }  
-        UART0_Info.RXD_CRC_Init = 0xffff;//³õÊ¼»¯CRC¼Ä´æÆ÷³õÊ¼Öµ    
+        UART0_Info.RXD_CRC_Init = 0xffff;//ï¿½ï¿½Ê¼ï¿½ï¿½CRCï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Öµ    
             
-        //½ÓÊÕµÄCRCÐ£ÑéÂë´¦Àí
+        //ï¿½ï¿½ï¿½Õµï¿½CRCÐ£ï¿½ï¿½ï¿½ë´¦ï¿½ï¿½
         UART0_Info.RXD_CRC_CkCd =   (UART0_RXD_B_Temp[UART0_SEND_NUM-2])+\
                                     (UART0_RXD_B_Temp[UART0_SEND_NUM-1]<<8);
     
-        //¼ÆËãµÄCRCÐ£ÑéÂëÓë½ÓÊÕµÄCRCÐ£ÑéÂë×÷±È½ÏºÍÖ¡Í·ÅÐ¶Ï(0X55AA)
+        //ï¿½ï¿½ï¿½ï¿½ï¿½CRCÐ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½CRCÐ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È½Ïºï¿½Ö¡Í·ï¿½Ð¶ï¿½(0X55AA)
         if( UART0_Info.RXD_CRC_Calc == UART0_Info.RXD_CRC_CkCd  &&\
             UART0_RXD_B_Temp[0] == 0XAA && UART0_RXD_B_Temp[1] == 0X55)
         {
@@ -539,7 +539,7 @@ void COM_UART0_Deal(void)
             }
             
             /*------------------------------------------------------------------------------------*/			
-            /*---------------------UART1Í¨ÐÅÐÄÌøÎ»Âß¼­--------------------------------------------*/					
+            /*---------------------UART1Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ß¼ï¿½--------------------------------------------*/					
             if(UART0_Info.heart_Status == 0)				
             {
                 UART0_Info.heart_Status = 1;
@@ -559,29 +559,29 @@ void COM_UART0_Deal(void)
     if(SysClockBase_ms.sys_1ms == 1)    
     {
         /*------------------------------------------------------------------------------------*/				
-        /*---------------------UART1Í¨ÐÅÐÄÌø¼à²â----------------------------------------------*/        
+        /*---------------------UART1Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½----------------------------------------------*/        
         COM_Uartx_HeartCheck(&UART0_Info);
     }    
     
     /*------------------------------------------------------------------------------------*/				
-    /*---------------------UART1Í¨ÐÅÒì³£ÇåÊý¾Ý--------------------------------------------*/	
-    if(UART0_Info.heart_OK_Status == 0)  ////UART2½ÓÊÕÊý¾ÝÍ¨ÐÅÒì³£Ê± RXD0_Status_Heart_OKÐÄÌø×´Ì¬Îª 0
+    /*---------------------UART1Í¨ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--------------------------------------------*/	
+    if(UART0_Info.heart_OK_Status == 0)  ////UART2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ì³£Ê± RXD0_Status_Heart_OKï¿½ï¿½ï¿½ï¿½×´Ì¬Îª 0
     {
         if(System_ProtectFlag_Info.all == 0 && OPERATING_MODE == NORMAL_MODE)
-            System_ProtectFlag_Info.all |= E_COMMUNICA_ERR;//Í¨ÐÅ¹ÊÕÏ
+            System_ProtectFlag_Info.all |= E_COMMUNICA_ERR;//Í¨ï¿½Å¹ï¿½ï¿½ï¿½
         
-        UART0_Info.RXD_W[0] = 0;   //2×Ö½ÚÖ¡Í·Êý¾Ý £»			
-        UART0_Info.RXD_W[1] = 0;   //2£ººó¼¶Ñ¡ÔñPFC¹¤×÷Ä£Ê½£»  1£ººó¼«Ñ¡ÔñINV¹¤×÷Ä£Ê½
-        UART0_Info.RXD_W[2] = 0;	//ºó¼¶¹ÊÕÏ´úÂë
-        UART0_Info.RXD_W[3] = 0;	//Äæ±äÊä³öµçÑ¹Öµ£¨RMS£© --×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶
-        UART0_Info.RXD_W[4] = 0;	//Äæ±äÊä³ö¹¦ÂÊ£¨W£©  
-        UART0_Info.RXD_W[5] = 0;	//×¢Òâ£ºÕæÊµÄ¸ÏßµçÑ¹Öµ·Å´ó10±¶
-        UART0_Info.RXD_W[6] = 0;	//Äæ±ä¹¤×÷µçÔ´×´Ì¬OKÎª1£¬×´Ì¬²»Õý³£Îª0
-        UART0_Info.RXD_W[7] = 0;	//×¢Òâ£ºÄæ±äÊä³öµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶
-        UART0_Info.RXD_W[8] = 0;	//ÊÐµçÊäÈëµçÑ¹Öµ£¨RMS£©--×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶
-        UART0_Info.RXD_W[9] = 0;	//ÊÐµçÊäÈëPFC¹¦ÂÊ£¨W£©----µç¸ÐµçÁ÷*ÊäÈëµçÑ¹
-        UART0_Info.RXD_W[10] = 0;	//ÊÐµçÊäÈëÅÔÂ·¹¦ÂÊ£¨W£©--¸ºÔØµçÁ÷ÓÐÐ§Öµ*ÊäÈëµçÑ¹ÓÐÐ§Öµ
-        UART0_Info.RXD_W[11] = 0;	//×¢Òâ£ºÊÐµçÊäÈëµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶         
+        UART0_Info.RXD_W[0] = 0;   //2ï¿½Ö½ï¿½Ö¡Í·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½			
+        UART0_Info.RXD_W[1] = 0;   //2ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½PFCï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½  1ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½INVï¿½ï¿½ï¿½ï¿½Ä£Ê½
+        UART0_Info.RXD_W[2] = 0;	//ï¿½ó¼¶¹ï¿½ï¿½Ï´ï¿½ï¿½ï¿½
+        UART0_Info.RXD_W[3] = 0;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½ --×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½
+        UART0_Info.RXD_W[4] = 0;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½  
+        UART0_Info.RXD_W[5] = 0;	//×¢ï¿½â£ºï¿½ï¿½ÊµÄ¸ï¿½ßµï¿½Ñ¹Öµï¿½Å´ï¿½10ï¿½ï¿½
+        UART0_Info.RXD_W[6] = 0;	//ï¿½ï¿½ä¹¤ï¿½ï¿½ï¿½ï¿½Ô´×´Ì¬OKÎª1ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+        UART0_Info.RXD_W[7] = 0;	//×¢ï¿½â£ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½
+        UART0_Info.RXD_W[8] = 0;	//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½--×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½
+        UART0_Info.RXD_W[9] = 0;	//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½PFCï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½----ï¿½ï¿½Ðµï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹
+        UART0_Info.RXD_W[10] = 0;	//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½--ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½Ð§Öµ*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµ
+        UART0_Info.RXD_W[11] = 0;	//×¢ï¿½â£ºï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½         
     }
         
     COM_Ctr_Info.INV_VBus_AD            = UART0_Info.RXD_W[5];
@@ -589,30 +589,30 @@ void COM_UART0_Deal(void)
     COM_Ctr_Info.INV_PFC_Ready_Status   = UART0_Info.RXD_W[6]; 
     
     
-    //·¢ËÍÖÁDC²àµÄµçÑ¹/¹¦ÂÊ/ÆµÂÊÊý¾Ý´¦Àí
-    InvToDC_Data_Info.err_Code = UART0_Info.RXD_W[2];//¹ÊÕÏÂë
-    InvToDC_Data_Info.mode_State = UART0_Info.RXD_W[1];//¹¤×÷Ä£Ê½£º·Åµç»òÕß³äµç 
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DCï¿½ï¿½Äµï¿½Ñ¹/ï¿½ï¿½ï¿½ï¿½/Æµï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+    InvToDC_Data_Info.err_Code = UART0_Info.RXD_W[2];//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    InvToDC_Data_Info.mode_State = UART0_Info.RXD_W[1];//ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ß³ï¿½ï¿½ 
     
-    //×¢Òâ£ºÏòDC²à·¢ËÍµÄVBUSÄ¸ÏßµçÑ¹Êý¾Ý£¬ÕæÊµÄ¸ÏßµçÑ¹Öµ·Å´ó10±¶ 
-    InvToDC_Data_Info.VBusAD_Val = UART0_Info.RXD_W[5];//×¢Òâ£ºÕæÊµÄ¸ÏßµçÑ¹Öµ·Å´ó10±¶
+    //×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½VBUSÄ¸ï¿½ßµï¿½Ñ¹ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ÊµÄ¸ï¿½ßµï¿½Ñ¹Öµï¿½Å´ï¿½10ï¿½ï¿½ 
+    InvToDC_Data_Info.VBusAD_Val = UART0_Info.RXD_W[5];//×¢ï¿½â£ºï¿½ï¿½ÊµÄ¸ï¿½ßµï¿½Ñ¹Öµï¿½Å´ï¿½10ï¿½ï¿½
     
-    //×¢Òâ£ºÏòDC²à·¢ËÍµÄÄæ±äÊä³öµçÑ¹ÓÐÐ§ÖµÊý¾ÝÊÇÕæÊµÓÐÐ§Öµ·Å´ó10±¶ 
-    InvToDC_Data_Info.VACOUT_RMS = UART0_Info.RXD_W[3];//Äæ±äÊä³öµçÑ¹Öµ£¨RMS£© --×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶
+    //×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½ 
+    InvToDC_Data_Info.VACOUT_RMS = UART0_Info.RXD_W[3];//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½ --×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½
     
-    //×¢Òâ£ºÏòDC²à·¢ËÍµÄÄæ±äÊä³öµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶ 
-    InvToDC_Data_Info.VACOUT_Freq = UART0_Info.RXD_W[7];//Äæ±äÊä³öµçÑ¹ÆµÂÊ£¨Hz£©
-    InvToDC_Data_Info.VACOUT_Power = UART0_Info.RXD_W[4];//Äæ±äÊä³ö¹¦ÂÊ£¨W£©
+    //×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½ 
+    InvToDC_Data_Info.VACOUT_Freq = UART0_Info.RXD_W[7];//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½Ê£ï¿½Hzï¿½ï¿½
+    InvToDC_Data_Info.VACOUT_Power = UART0_Info.RXD_W[4];//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½
     
-    //×¢Òâ£ºÏòDC²à·¢ËÍµÄÊÐµçÊäÈëµçÑ¹ÓÐÐ§ÖµÊý¾ÝÊÇÕæÊµÓÐÐ§Öµ·Å´ó10±¶ 
-    InvToDC_Data_Info.VACIN_RMS = UART0_Info.RXD_W[8];//ÊÐµçÊäÈëµçÑ¹Öµ£¨RMS£©--×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶  
+    //×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½ 
+    InvToDC_Data_Info.VACIN_RMS = UART0_Info.RXD_W[8];//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½--×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½  
     
-    //×¢Òâ£ºÏòDC²à·¢ËÍµÄÊÐµçÊäÈëµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶
-    InvToDC_Data_Info.VACIN_Freq = UART0_Info.RXD_W[11];//ÊÐµçÊäÈëµçÑ¹ÆµÂÊ£¨Hz£©
-    InvToDC_Data_Info.VACIN_PFC_Power = UART0_Info.RXD_W[9];//ÊÐµçÊäÈëPFC¹¦ÂÊ£¨W£©----µç¸ÐµçÁ÷*ÊäÈëµçÑ¹
-    InvToDC_Data_Info.VACIN_BypassPower = UART0_Info.RXD_W[10];//ÊÐµçÊäÈëÅÔÂ·¹¦ÂÊ£¨W£©--¸ºÔØµçÁ÷ÓÐÐ§Öµ*ÊäÈëµçÑ¹ÓÐÐ§Öµ
+    //×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½
+    InvToDC_Data_Info.VACIN_Freq = UART0_Info.RXD_W[11];//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½Ê£ï¿½Hzï¿½ï¿½
+    InvToDC_Data_Info.VACIN_PFC_Power = UART0_Info.RXD_W[9];//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½PFCï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½----ï¿½ï¿½Ðµï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹
+    InvToDC_Data_Info.VACIN_BypassPower = UART0_Info.RXD_W[10];//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½--ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½Ð§Öµ*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµ
 
 
-    //´®¿ÚÍ¨ÐÅ,DC²àÊý¾Ý·¢ËÍÖÁINV²à
+    //ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½,DCï¿½ï¿½ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ï¿½ï¿½INVï¿½ï¿½
     if(UART0_Info.TXD_Period_Cnt >= UART0_Info.TXD_Period_Val)
     {               
         DC_DataSend();
@@ -626,12 +626,12 @@ void COM_UART0_Deal(void)
 Description: COM_UART1_Deal
 Input      : 
 Return     : 
-Others     : ´®¿Ú1Êý¾Ý´¦Àí
+Others     : ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 *************************************************/
 uint8_t BMS_flagtest = 0;
 void COM_UART1_Deal(void)
 {
-    //¹ÊÕÏ´úÂë£¬Ðè×ÔÐÐÍêÉÆ
+    //ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ////    if(System_ProtectFlag_Info.bit.OTP == 1)
 ////    {
 ////        DcToMC_Data_Info.Flag.u32ErrCode = 0x10;//
@@ -653,30 +653,30 @@ void COM_UART1_Deal(void)
 ////        DcToMC_Data_Info.Flag.u32ErrCode = 0x01;//
 ////    } 
 
-    //DC²à·¢ËÍÖÁMCÖ÷¿ØµÄÊý¾Ý
-    //µÍ16Î»ÎªÄæ±ä²à¹ÊÕÏ´úÂë£¬¸ß16Î»ÎªDC²à¹ÊÕÏ´úÂë;¿É×ÔÐÐÐÞ¸Ä
+    //DCï¿½à·¢ï¿½ï¿½ï¿½ï¿½MCï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
+    //ï¿½ï¿½16Î»Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ë£¬ï¿½ï¿½16Î»ÎªDCï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
     DcToMC_Data_Info.Flag.u32ErrCode= InvToDC_Data_Info.err_Code + (System_ProtectFlag_Info.all<<16);
-    DcToMC_Data_Info.mode_State     = DC_Ctrl_Info.mode;//¹¤×÷Ä£Ê½£º·Åµç»òÕß³äµç 
-    DcToMC_Data_Info.VACOUT_RMS     = InvToDC_Data_Info.VACOUT_RMS;//Äæ±äÊä³öµçÑ¹Öµ£¨RMS£© --×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶ 
-    DcToMC_Data_Info.VACOUT_Freq    = InvToDC_Data_Info.VACOUT_Freq;//×¢Òâ£ºÏòDC²à·¢ËÍµÄÄæ±äÊä³öµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶ 
-    DcToMC_Data_Info.VACOUT_Power   = InvToDC_Data_Info.VACOUT_Power;//Äæ±äÊä³ö¹¦ÂÊ£¨W£©
-    DcToMC_Data_Info.VACIN_RMS      = InvToDC_Data_Info.VACIN_RMS;//ÊÐµçÊäÈëµçÑ¹Öµ£¨RMS£©--×¢Òâ£ºÕæÊµµçÑ¹ÓÐÐ§Öµ·Å´ó10±¶    
-    DcToMC_Data_Info.VACIN_Freq     = InvToDC_Data_Info.VACIN_Freq;//×¢Òâ£ºÏòDC²à·¢ËÍµÄÊÐµçÊäÈëµçÑ¹ÆµÂÊÊý¾ÝÊÇÕæÊµÆµÂÊ·Å´ó10±¶
-    DcToMC_Data_Info.VACIN_PFC_Power    = InvToDC_Data_Info.VACIN_PFC_Power;//ÊÐµçÊäÈëPFC¹¦ÂÊ£¨W£©----µç¸ÐµçÁ÷*ÊäÈëµçÑ¹
-    DcToMC_Data_Info.VACIN_BypassPower  = InvToDC_Data_Info.VACIN_BypassPower;//ÊÐµçÊäÈëÅÔÂ·¹¦ÂÊ£¨W£©--¸ºÔØµçÁ÷ÓÐÐ§Öµ*ÊäÈëµçÑ¹ÓÐÐ§Öµ
+    DcToMC_Data_Info.mode_State     = DC_Ctrl_Info.mode;//ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ß³ï¿½ï¿½ 
+    DcToMC_Data_Info.VACOUT_RMS     = InvToDC_Data_Info.VACOUT_RMS;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½ --×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½ 
+    DcToMC_Data_Info.VACOUT_Freq    = InvToDC_Data_Info.VACOUT_Freq;//×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½ 
+    DcToMC_Data_Info.VACOUT_Power   = InvToDC_Data_Info.VACOUT_Power;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½
+    DcToMC_Data_Info.VACIN_RMS      = InvToDC_Data_Info.VACIN_RMS;//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµï¿½ï¿½RMSï¿½ï¿½--×¢ï¿½â£ºï¿½ï¿½Êµï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµï¿½Å´ï¿½10ï¿½ï¿½    
+    DcToMC_Data_Info.VACIN_Freq     = InvToDC_Data_Info.VACIN_Freq;//×¢ï¿½â£ºï¿½ï¿½DCï¿½à·¢ï¿½Íµï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÆµï¿½Ê·Å´ï¿½10ï¿½ï¿½
+    DcToMC_Data_Info.VACIN_PFC_Power    = InvToDC_Data_Info.VACIN_PFC_Power;//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½PFCï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½----ï¿½ï¿½Ðµï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹
+    DcToMC_Data_Info.VACIN_BypassPower  = InvToDC_Data_Info.VACIN_BypassPower;//ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ê£ï¿½Wï¿½ï¿½--ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½Ð§Öµ*ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Ð§Öµ
     
-    DcToMC_Data_Info.vBat       = COM_AD_Data_Info.vBat_Val_Fir;//µç³ØµçÑ¹ÕæÊµÖµ·Å´ó±¶Êý¡¾COM_REAL_VBAT_SCAL¡¿
-    DcToMC_Data_Info.iBat_CHG   = COM_AD_Data_Info.iBat_CHG_Val_Fir;//µç³Ø³äµçµçÁ÷·Å´ó±¶Êý¡¾COM_REAL_IBAT_CHG_SCAL¡¿
-    DcToMC_Data_Info.temp_NTC   = ADSample_Info.temp_NTC_AD_FIR;//Æ÷¼þÎÂ¶È   
-    DcToMC_Data_Info.iBat_DISC  = COM_AD_Data_Info.iBat_DISC_Val_Fir;//µç³Ø·ÅµçµçÁ÷·Å´ó±¶Êý¡¾COM_REAL_IBAT_DISC_SCAL¡¿
-    DcToMC_Data_Info.vBat_CHG_Power     = COM_AD_Data_Info.vBat_CHG_Power;//µç³Ø³äµç¹¦ÂÊ£¨W£©
-    DcToMC_Data_Info.vBat_DISC_Power    = COM_AD_Data_Info.vBat_DISC_Power;//µç³Ø·Åµç¹¦ÂÊ£¨W£©
+    DcToMC_Data_Info.vBat       = COM_AD_Data_Info.vBat_Val_Fir;//ï¿½ï¿½Øµï¿½Ñ¹ï¿½ï¿½ÊµÖµï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½COM_REAL_VBAT_SCALï¿½ï¿½
+    DcToMC_Data_Info.iBat_CHG   = COM_AD_Data_Info.iBat_CHG_Val_Fir;//ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½COM_REAL_IBAT_CHG_SCALï¿½ï¿½
+    DcToMC_Data_Info.temp_NTC   = ADSample_Info.temp_NTC_AD_FIR;//ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½   
+    DcToMC_Data_Info.iBat_DISC  = COM_AD_Data_Info.iBat_DISC_Val_Fir;//ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½COM_REAL_IBAT_DISC_SCALï¿½ï¿½
+    DcToMC_Data_Info.vBat_CHG_Power     = COM_AD_Data_Info.vBat_CHG_Power;//ï¿½ï¿½Ø³ï¿½ç¹¦ï¿½Ê£ï¿½Wï¿½ï¿½
+    DcToMC_Data_Info.vBat_DISC_Power    = COM_AD_Data_Info.vBat_DISC_Power;//ï¿½ï¿½Ø·Åµç¹¦ï¿½Ê£ï¿½Wï¿½ï¿½
 
     if( COM_RUN_STATE == State_Context.state_Value && \
         Run_Deal.flag.bit.OpenDriver_Ok == E_TRUE  && \
         DC_Ctrl_Info.mode == DC_CHARGE&&SysClockBase_ms.sys_1ms == 1)
     {
-       ////ÆôÓÃ±ä»¯³äµçµçÁ÷²âÊÔ  BMS_Order_Info.cnt1++;
+       ////ï¿½ï¿½ï¿½Ã±ä»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  BMS_Order_Info.cnt1++;
         if(BMS_Order_Info.cnt1 >=15000&&BMS_flagtest==0)
         {
             BMS_flagtest = 1;
@@ -701,11 +701,11 @@ void COM_UART1_Deal(void)
             
     }    
     
-    //Éè¶¨ºãÑ¹Öµ
+    //ï¿½è¶¨ï¿½ï¿½Ñ¹Öµ
     if(0&&BMS_Order_Info.Flag.bit.Set_CV_Flag == 1)
     {
         CHG_Info.allow_VBat_Val = (uint32_t)(BMS_Order_Info.set_CV_Val -1.8*10) *   4096 / COM_VBAT_BASE /10;;
-        CHG_Info.vBat_CV_Val = (uint32_t)(BMS_Order_Info.set_CV_Val -0.3*10) *   4096 / COM_VBAT_BASE /10;//ÆôÓÃÍâ²¿´«ÊäºãÑ¹Öµ,·Å´ó10±¶
+        CHG_Info.vBat_CV_Val = (uint32_t)(BMS_Order_Info.set_CV_Val -0.3*10) *   4096 / COM_VBAT_BASE /10;//ï¿½ï¿½ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹Öµ,ï¿½Å´ï¿½10ï¿½ï¿½
         CHG_Info.vBat_CC_CV_Val = (uint32_t)(BMS_Order_Info.set_CV_Val -0.8*10) *   4096 / COM_VBAT_BASE /10;
         CHG_Info.vBat_FC_Val = (uint32_t)(BMS_Order_Info.set_CV_Val -0.3*10) *   4096 / COM_VBAT_BASE /10;
         CHG_Info.CC2_Flag = 0;  
@@ -713,20 +713,20 @@ void COM_UART1_Deal(void)
 
     }
     
-    //BMSÏÂ·¢Éè¶¨³äµçºãÁ÷Öµ
+    //BMSï¿½Â·ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
     if(1&&BMS_Order_Info.Flag.bit.Set_CC_Flag == 1)   
     {
      
-        CHG_Info.iBat_CC1_Val = (uint32_t)BMS_Order_Info.set_CC_Val *COM_IBAT_CHG_SCAL/10;//ÆôÓÃÍâ²¿´«ÊäºãÁ÷Öµ,·Å´ó10±¶
+        CHG_Info.iBat_CC1_Val = (uint32_t)BMS_Order_Info.set_CC_Val *COM_IBAT_CHG_SCAL/10;//ï¿½ï¿½ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ,ï¿½Å´ï¿½10ï¿½ï¿½
         CHG_Info.iBat_CC2_Val = (uint32_t)(BMS_Order_Info.set_CC_Val - 0.5*10) *COM_IBAT_CHG_SCAL/10;
         CHG_Info.iBat_Ref_SS = CHG_Info.iBat_CC1_Val;
 //        CHG_Info.CC2_Flag = 0;
         BMS_Order_Info.Flag.bit.Set_CC_Flag = 0;
         
-        //ÏÞÖÆ×î´ó³äµçµçÁ÷
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(CHG_Info.iBat_CC1_Val > COM_CHG_IBAT_CC1_VAL)   CHG_Info.iBat_CC1_Val = COM_CHG_IBAT_CC1_VAL; 
         if(CHG_Info.iBat_CC2_Val > COM_CHG_IBAT_CC1_VAL)   CHG_Info.iBat_CC2_Val = COM_CHG_IBAT_CC1_VAL; 
-        //ÏÞÖÆ×îÐ¡³äµçµçÁ÷
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(CHG_Info.iBat_CC1_Val < COM_CHG_IBAT_TC_VAL)   CHG_Info.iBat_CC1_Val = COM_CHG_IBAT_TC_VAL; 
         if(CHG_Info.iBat_CC2_Val < COM_CHG_IBAT_TC_VAL)   CHG_Info.iBat_CC2_Val = COM_CHG_IBAT_TC_VAL;         
     }
@@ -737,7 +737,7 @@ void COM_UART1_Deal(void)
 Description: COM_UART2_Deal
 Input      : 
 Return     : 
-Others     : ´®¿Ú2Êý¾Ý´¦Àí
+Others     : ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 *************************************************/
 void COM_UART2_Deal(void)
 {
@@ -745,8 +745,8 @@ void COM_UART2_Deal(void)
     
     u8UartDebug_Cnt1 ++;
     /*------------------------------------------------------------------------------------*/			
-    /*---------------------UART0´®¿Úµ÷ÊÔ--------------------------------------------------*/	
-    if(u8UartDebug_Cnt1 > 213)        
+    /*---------------------UART0ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½--------------------------------------------------*/	
+    if(u8UartDebug_Cnt1 > 4096)        
     {
         u8UartDebug_Cnt1 = 0;
         User_UART_View();
@@ -759,23 +759,23 @@ void COM_UART2_Deal(void)
 Description: COM_AD_Data_Deal
 Input      : 
 Return     : 
-Others     : AD²ÉÑùÕæÊµÊý¾Ý´¦Àí
+Others     : ADï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 *************************************************/
 void COM_AD_Data_Deal(void)
 {
-    //¶ÁÈ¡²¿·ÖADÊý¾Ý
-    ADSample_Info.ref_AD_FIR        = ADC2->ADDR3;  //VREF_2.5V²ÉÑù  
-    ADSample_Info.temp_NTC_AD_FIR   = ADC2->ADDR15;//ÎÂ¶È²ÉÑù
-    ADSample_Info.auxPower_AD_FIR   = ADC2->ADDR12;//¸¨ÖúµçÔ´µçÑ¹²ÉÑù   
+    //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ADï¿½ï¿½ï¿½ï¿½
+    ADSample_Info.ref_AD_FIR        = ADC2->ADDR3;  //VREF_2.5Vï¿½ï¿½ï¿½ï¿½  
+    ADSample_Info.temp_NTC_AD_FIR   = ADC2->ADDR15;//ï¿½Â¶È²ï¿½ï¿½ï¿½
+    ADSample_Info.auxPower_AD_FIR   = ADC2->ADDR12;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½   
     
-    //AD²ÉÑùÕæÊµÊý¾Ý´¦Àí,ÔÚÕæÊµÖµ»ù´¡ÉÏ·Å´óÉè¶¨±¶Êý
+    //ADï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ÊµÖµï¿½ï¿½ï¿½ï¿½ï¿½Ï·Å´ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½
     COM_AD_Data_Info.Sum_Cnt++;
-    COM_AD_Data_Info.vRef_Sum       += ADSample_Info.ref_AD_FIR ;//»ù×¼VREF
-    COM_AD_Data_Info.temp_NTC_Sum   += ADSample_Info.temp_NTC_AD_FIR;//ÎÂ¶È     
-    COM_AD_Data_Info.vBat_Sum       += ADSample_Info.vBat_AD_FIR * COM_REAL_VBAT_SCAL * COM_VBAT_BASE>>12;//µç³ØµçÑ¹     
-    COM_AD_Data_Info.iBat_CHG_Sum   += ADSample_Info.iBat_CHG_AD_FIR * COM_REAL_IBAT_CHG_SCAL * COM_IBAT_CHG_BASE>>12;//µç³Ø³äµçµçÁ÷
-    COM_AD_Data_Info.iBat_DISC_Sum  += ADSample_Info.iBat_DISC_AD_FIR * COM_REAL_IBAT_DISC_SCAL * COM_IBAT_DISC_BASE>>12;//µç³Ø·ÅµçµçÁ÷
-    COM_AD_Data_Info.auxPower_Sum   += ADSample_Info.auxPower_AD_FIR * COM_REAL_AUXPOWER_SCAL * COM_AUX_POWER_BASE>>12;//¸¨ÖúµçÔ´µçÑ¹     
+    COM_AD_Data_Info.vRef_Sum       += ADSample_Info.ref_AD_FIR ;//ï¿½ï¿½×¼VREF
+    COM_AD_Data_Info.temp_NTC_Sum   += ADSample_Info.temp_NTC_AD_FIR;//ï¿½Â¶ï¿½     
+    COM_AD_Data_Info.vBat_Sum       += ADSample_Info.vBat_AD_FIR * COM_REAL_VBAT_SCAL * COM_VBAT_BASE>>12;//ï¿½ï¿½Øµï¿½Ñ¹     
+    COM_AD_Data_Info.iBat_CHG_Sum   += ADSample_Info.iBat_CHG_AD_FIR * COM_REAL_IBAT_CHG_SCAL * COM_IBAT_CHG_BASE>>12;//ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½
+    COM_AD_Data_Info.iBat_DISC_Sum  += ADSample_Info.iBat_DISC_AD_FIR * COM_REAL_IBAT_DISC_SCAL * COM_IBAT_DISC_BASE>>12;//ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½ï¿½
+    COM_AD_Data_Info.auxPower_Sum   += ADSample_Info.auxPower_AD_FIR * COM_REAL_AUXPOWER_SCAL * COM_AUX_POWER_BASE>>12;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ñ¹     
     if(COM_AD_Data_Info.Sum_Cnt>=1024)
     {  
         COM_AD_Data_Info.vRef_Val       = COM_AD_Data_Info.vRef_Sum>>10;
@@ -786,22 +786,22 @@ void COM_AD_Data_Deal(void)
         COM_AD_Data_Info.iBat_DISC_Val  = COM_AD_Data_Info.iBat_DISC_Sum>>10;
         
         COM_AD_Data_Info.vRef_Hold      = DFILTER_N(4,(COM_AD_Data_Info.vRef_Val),COM_AD_Data_Info.vRef_Hold);
-        COM_AD_Data_Info.vRef_Val_Fir   = COM_AD_Data_Info.vRef_Hold >> 16;//¸¨ÖúµçÔ´µçÑ¹          
+        COM_AD_Data_Info.vRef_Val_Fir   = COM_AD_Data_Info.vRef_Hold >> 16;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ñ¹          
 
         COM_AD_Data_Info.temp_NTC_Hold      = DFILTER_N(4,(COM_AD_Data_Info.temp_NTC_Val),COM_AD_Data_Info.temp_NTC_Hold);
-        COM_AD_Data_Info.temp_NTC_Val_Fir   = COM_AD_Data_Info.temp_NTC_Hold >> 16;//¸¨ÖúµçÔ´µçÑ¹          
+        COM_AD_Data_Info.temp_NTC_Val_Fir   = COM_AD_Data_Info.temp_NTC_Hold >> 16;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ñ¹          
                
         COM_AD_Data_Info.auxPower_Hold      = DFILTER_N(4,(COM_AD_Data_Info.auxPower_Val),COM_AD_Data_Info.auxPower_Hold);
-        COM_AD_Data_Info.auxPower_Val_Fir   = COM_AD_Data_Info.auxPower_Hold >> 16;//¸¨ÖúµçÔ´µçÑ¹          
+        COM_AD_Data_Info.auxPower_Val_Fir   = COM_AD_Data_Info.auxPower_Hold >> 16;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ñ¹          
         
         COM_AD_Data_Info.vBat_Hold          = DFILTER_N(4,COM_AD_Data_Info.vBat_Val,COM_AD_Data_Info.vBat_Hold);
-        COM_AD_Data_Info.vBat_Val_Fir       = COM_AD_Data_Info.vBat_Hold >> 16;//µç³ØµçÑ¹  
+        COM_AD_Data_Info.vBat_Val_Fir       = COM_AD_Data_Info.vBat_Hold >> 16;//ï¿½ï¿½Øµï¿½Ñ¹  
 
         COM_AD_Data_Info.iBat_CHG_Hold      = DFILTER_N(5,(COM_AD_Data_Info.iBat_CHG_Val),COM_AD_Data_Info.iBat_CHG_Hold);
-        COM_AD_Data_Info.iBat_CHG_Val_Fir   = COM_AD_Data_Info.iBat_CHG_Hold >> 16;//µç³Ø³äµçµçÁ÷    
+        COM_AD_Data_Info.iBat_CHG_Val_Fir   = COM_AD_Data_Info.iBat_CHG_Hold >> 16;//ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½    
 
         COM_AD_Data_Info.iBat_DISC_Hold     = DFILTER_N(5,(COM_AD_Data_Info.iBat_DISC_Val),COM_AD_Data_Info.iBat_DISC_Hold);
-        COM_AD_Data_Info.iBat_DISC_Val_Fir  = COM_AD_Data_Info.iBat_DISC_Hold >> 16;//µç³Ø·ÅµçµçÁ÷  
+        COM_AD_Data_Info.iBat_DISC_Val_Fir  = COM_AD_Data_Info.iBat_DISC_Hold >> 16;//ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½ï¿½  
       
         
         COM_AD_Data_Info.Sum_Cnt        = 0;
@@ -814,9 +814,9 @@ void COM_AD_Data_Deal(void)
     }  
 
     COM_AD_Data_Info.vBat_CHG_Power     = COM_AD_Data_Info.vBat_Val_Fir * COM_AD_Data_Info.iBat_CHG_Val_Fir/ \
-                                        (COM_REAL_VBAT_SCAL*COM_REAL_IBAT_CHG_SCAL);//µç³Ø³äµç¹¦ÂÊ£¨W£©
+                                        (COM_REAL_VBAT_SCAL*COM_REAL_IBAT_CHG_SCAL);//ï¿½ï¿½Ø³ï¿½ç¹¦ï¿½Ê£ï¿½Wï¿½ï¿½
     COM_AD_Data_Info.vBat_DISC_Power    = COM_AD_Data_Info.vBat_Val_Fir * COM_AD_Data_Info.iBat_DISC_Val_Fir/ \
-                                        (COM_REAL_VBAT_SCAL*COM_REAL_IBAT_DISC_SCAL);;//µç³Ø·Åµç¹¦ÂÊ£¨W£©
+                                        (COM_REAL_VBAT_SCAL*COM_REAL_IBAT_DISC_SCAL);;//ï¿½ï¿½Ø·Åµç¹¦ï¿½Ê£ï¿½Wï¿½ï¿½
     
 }
 
@@ -825,7 +825,7 @@ void COM_AD_Data_Deal(void)
 Description: COM_CHG_Data_Deal
 Input      : 
 Return     : 
-Others     : ³äµçÕ¼¿Õ±È»ºÆô¡¢µçÁ÷»·Â·»ºÆô¡¢³äµç×´Ì¬´¦Àí£ºä¸Á÷¡¢ºãÑ¹¡¢ºãÁ÷¡¢¸¡³ä
+Others     : ï¿½ï¿½ï¿½Õ¼ï¿½Õ±È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *************************************************/
 void COM_CHG_Data_Deal(void)
 {
@@ -837,15 +837,15 @@ void COM_CHG_Data_Deal(void)
             (DC_Ctrl_Info.INV_Ready_State == COM_INV_READY_STATE_OK||\
             DC_Ctrl_Info.mode_Operate == DEBUG_MODE))
         {                 
-            CHG_PWM_SS();//³äµç¿ØÖÆÊ±Æô»úÕ¼¿Õ±È»ºÆô¶¯
-            CHG_IBAT_SS();//IBATµçÁ÷¿ØÖÆ»·Â·»ºÆô¶¯´¦Àí
+            CHG_PWM_SS();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Õ±È»ï¿½ï¿½ï¿½ï¿½ï¿½
+            CHG_IBAT_SS();//IBATï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ»ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             
-            //³äµç×´Ì¬´¦Àí£ºä¸Á÷¡¢ºãÑ¹¡¢ºãÁ÷¡¢¸¡³ä
+            //ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             CHG_State_Select();
                 
             if(CHG_Info.Sec_Cnt>=CHG_Info.Sec_Val)//
             {
-                CHG_Info.Sec_Cnt = 0;//ÃëÊ±»ù¼ÆÊýÖµÇåÁã
+                CHG_Info.Sec_Cnt = 0;//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
             }              
         }                       
     } 
@@ -856,48 +856,48 @@ void COM_CHG_Data_Deal(void)
 Description: COM_Function
 Input      : 
 Return     : 
-Others     : ÓÃ»§ÈÎÎñÖ´ÐÐ
+Others     : ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
 *************************************************/
 uint8_t u8System1ms_Cnt = 0;
 void COM_Function(void)
 {
-    //»ñÈ¡×´Ì¬»úµÄ×´Ì¬            
+    //ï¿½ï¿½È¡×´Ì¬ï¿½ï¿½ï¿½ï¿½×´Ì¬            
     State_Context.ContextPtr( &State_Context );                
     
-    //Ö´ÐÐ×´Ì¬»ú¶ÔÓ¦µÄÈÎÎñ
+    //Ö´ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     State_Context_Task();    
     
-    //¹ÊÕÏÊ±¹Ø±ÕÊä³ö 
+    //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ 
     DC_CloseDrive(); 
     
-    //LEDÏÔÊ¾´¦Àí    
+    //LEDï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½    
     User_LED_Deal();	
     
-    //°´¼üÂß¼­´¦Àí
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
     User_Key_Deal();
     
-    //·çÉÈ¿ØÖÆ´¦Àí
+    //ï¿½ï¿½ï¿½È¿ï¿½ï¿½Æ´ï¿½ï¿½ï¿½
     User_FAN_Deal();
        
-    //´®¿Ú0Êý¾Ý´¦Àí(ÓëINV²àÍ¨ÐÅ)
+    //ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½(ï¿½ï¿½INVï¿½ï¿½Í¨ï¿½ï¿½)
     COM_UART0_Deal();
 
-    //´®¿Ú1Êý¾Ý´¦Àí(ÓëÖ÷¿Ø²àÍ¨ÐÅ)
+    //ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½Í¨ï¿½ï¿½)
     COM_UART1_Deal();
     
-    //´®¿Ú2Êý¾Ý´¦Àí(µ÷ÊÔ)
+    //ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
     COM_UART2_Deal();
     
-    //³äµç»òÕß·Åµç¹¦ÄÜÑ¡Ôñ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ß·Åµç¹¦ï¿½ï¿½Ñ¡ï¿½ï¿½
     COM_CHG_INV_Select();  
               
-    //³äµç×´Ì¬Âß¼­´¦Àí(³äµçÍê³ÉºÍÆôÓÃ³äµç)
+    //ï¿½ï¿½ï¿½×´Ì¬ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½)
     CHG_State_Deal();    
     
-    //AD²ÉÑùÕæÊµÊý¾Ý´¦Àí
+    //ADï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
     COM_AD_Data_Deal(); 
  
-     //³äµçÕ¼¿Õ±È»ºÆô¡¢µçÁ÷»·Â·»ºÆô¡¢³äµç×´Ì¬´¦Àí£ºä¸Á÷¡¢ºãÑ¹¡¢ºãÁ÷¡¢¸¡³ä
+     //ï¿½ï¿½ï¿½Õ¼ï¿½Õ±È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     COM_CHG_Data_Deal(); 
     
               
@@ -907,11 +907,11 @@ void COM_Function(void)
     }        
     if(u8System1ms_Cnt>=2)
     {
-        SysClockBase_ms.sys_1ms = 0;//1ms Ê±ÖÓ±ê¼ÇÇåÁã
-        u8System1ms_Cnt =0;//1msÊ±ÖÓÖÜÆÚÔÚMainº¯Êý´æÔÚµÄÖÜÆÚ¼ÆÊýÖµÇåÁã
+        SysClockBase_ms.sys_1ms = 0;//1ms Ê±ï¿½Ó±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        u8System1ms_Cnt =0;//1msÊ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mainï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
     }
            
-    //Äæ±ä²à´«Êä¹ÊÕÏÂß¼­´¦Àí
+    //ï¿½ï¿½ï¿½à´«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
     if( BOSOC_STATUS == 0&&\
         E_TRUE == StartCheck_Flag_Info.bit.auxPower_Low_OK &&\
         System_ProtectFlag_Info.all == 0 &&\

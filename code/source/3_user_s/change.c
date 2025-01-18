@@ -5,7 +5,8 @@
 char txCharL[40] = {0};
 void Function_TxSendDebug_INT(int32_t data)
 {
-    sprintf((char *)txCharL, "%d\r\n", data);
+    // sprintf((char *)txCharL, "%d", data);
+    sprintf((char *)txCharL, "%d,%d\r\n", data, data + 1);
 
     DMAVEC->CTRL[2].DMSAR = (uint32_t)(void *)&txCharL[1];
     DMAVEC->CTRL[2].DMACT = strlen(txCharL) - 1;
