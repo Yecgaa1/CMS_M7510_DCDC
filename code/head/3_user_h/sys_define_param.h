@@ -61,7 +61,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 ***************************************************************************/
 #define COM_LFP_VBAT_S_MIN                              (2.50)//单节磷酸铁锂电池最低电压    
 #define COM_LFP_VBAT_S_MAX                              (3.65)//单节磷酸铁锂电池最高电压 
-#define COM_NCM_VBAT_S_MIN                              (3.29)//单节三元铁锂电池最低电压    46/14
+#define COM_NCM_VBAT_S_MIN                              (3.07)//单节三元铁锂电池最低电压    43/14
 #define COM_NCM_VBAT_S_MAX                              (3.85)//单节三元铁锂电池最高电压    54/14
 
 /*-------------------锂电池类型选择-----------------------------------------*/

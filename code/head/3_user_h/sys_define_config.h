@@ -175,7 +175,7 @@ Copyright (C) 2021 China Micro Semiconductor Limited Company. All Rights Reserve
 /***************************************************************************/
 #define COM_UART0_BAUDRATE              (19200  )//UART0波特率设定值    DC侧与INV侧通信
 #define COM_UART1_BAUDRATE              (19200  )//UART1波特率设定值    DC侧与主控侧通信
-#define COM_UART2_BAUDRATE              (1000000)  //UART2波特率设定值    调试口
+#define COM_UART2_BAUDRATE              (19200)  //UART2波特率设定值    调试口
 /***************************************************************************/
 
 
