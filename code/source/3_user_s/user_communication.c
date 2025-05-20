@@ -431,6 +431,7 @@ void User_UART_View(void)
     // COM_TxSendDebug(UART1_Info.dataBuffer[0]>>4 ,UART1_Info.dataBuffer[1] ,UART1_Info.dataBuffer[2],UART1_Info.dataBuffer[5]);//
 
     // COM_TxSendDebug(CHG_PID_IBat.out,CHG_PID_IBat.fdb ,State_Context.state_Value*1000+BAT_START_STATUS*300 ,DC_Ctrl_Info.EPWM_Duty);//
+    // Function_TxSendDebug_TWO_INT((int32_t)((COM_AD_Data_Info.vBat_Val / 100.0 - COM_VBAT_MIN_VAL) / (COM_VBAT_MAX_VAL - COM_VBAT_MIN_VAL) * 100),System_ProtectFlag_Info.all);
 
-    Function_TxSendDebug_TWO_INT((int32_t)((COM_AD_Data_Info.vBat_Val / 100.0 - COM_VBAT_MIN_VAL) / (COM_VBAT_MAX_VAL - COM_VBAT_MIN_VAL) * 100),System_ProtectFlag_Info.all);
+    Function_TxSendDebug_TWO_INT(COM_AD_Data_Info.vBat_Val,System_ProtectFlag_Info.all);
 }
